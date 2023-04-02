@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>selection sort</title>
+
+    <script>
+        let data=[20,12,53,3]
+
+       function selection(){ 
+       
+       for(let i=0;i<data.length;i++){
+
+     let minId=i;/*minId me initially i ka value rakhe hai, joki andar vale loop me update hota rahega
+     .basically minId is tracing the index of minimum element while comparing the element at index i with all other array elements.
+     initially minId me first element ko hi rakhe hai, first element ko hi ham array ka sabse chotta element man rahe hai . agar inner loop me compare karne par i.e (data[j]<data[minId]),
+      array ka sabse chotta element koi aur milta hai to uske index se ham minId ko replace kar denge..
+   */
+
+        for(let j=i+1;j<data.length;j++){
+        
+            if(data[j]<data[minId]){
+                minId=j
+            }
+           
+        }
+
+        //swapping                     3                                   0
+        let temp=data[minId]//3(data[minId]) will do swapping with 20(data[i]):-3,12,53,20.similarly it will execute for next indices.
+        data[minId]=data[i]
+        data[i]=temp;
+       }
+       //the loop will again run for next indices until all the array element get sorted.
+
+       }
+
+       selection();
+       console.log(data);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
