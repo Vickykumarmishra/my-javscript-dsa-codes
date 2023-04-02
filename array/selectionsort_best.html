@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+//http://www.btechsmartclass.com/data_structures/selection-sort.html
+    <title>selection sort</title>
+
+    <script>
+        let data=[20,12,53,3,18,15,29]
+
+       function selection()
+       {
+        
+        for(let i=0;i<data.length;i++){
+
+            for(let j=i+1;j<data.length;j++){
+
+                if(data[j]<data[i]){
+                    //data[0]<data[0+1].so we will do swapping
+                    let temp=data[i];
+                    data[i]=data[j]//bcoz data at jth index is smaller than data at ith index.
+                    data[j]=temp
+                }
+            }
+        }
+
+       }
+     
+
+       
+
+       selection();
+       console.log(data);
+    </script>
+
+</head>
+<body>
+    <h1>selection sort</h1>
+</body>
+</html>

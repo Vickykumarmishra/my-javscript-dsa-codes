@@ -17,7 +17,7 @@
       array ka sabse chotta element koi aur milta hai to uske index se ham minId ko replace kar denge..
    */
 
-        for(let j=i+1;j<data.length;j++){
+       for(let j=i+1;j<data.length;j++){
         
             if(data[j]<data[minId]){
                 minId=j
@@ -29,10 +29,14 @@
         let temp=data[minId]//3(data[minId]) will do swapping with 20(data[i]):-3,12,53,20.similarly it will execute for next indices.
         data[minId]=data[i]
         data[i]=temp;
+
+        
        }
        //the loop will again run for next indices until all the array element get sorted.
 
        }
+
+       
 
        selection();
        console.log(data);
