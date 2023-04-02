@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+        function searcher(){
+
+            let data=[20,15,25,30,28,16]
+           var elem=document.getElementById('search1').value;
+           elem=parseInt(elem);
+           let index=undefined;
+    
+     for(i=0;i<data.length;i++){
+          
+        if(data[i]===elem){
+           index=i;
+            break;//come out of the loop;
+        }
+     }
+     console.log('element is found at position:'+index);
+document.getElementById('para1').innerHTML='element is found at position:'+index;
+        }
+     
+    </script>
+   
+</head>
+
+<body>
+    
+    <input type="text" id="search1">
+    <button onclick="searcher()">search</button>
+    <p id="para1"></p>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        let data=[13,7,18,19,17,6,8,5];
+        
+        for(let i=0;i<data.length;i++){
+
+            for(let j=0;j<data.length;j++){
+
+                if(data[j]>data[j+1]){
+                    //swapping
+
+                    let temp=data[j]
+                    data[j]=data[j+1];
+                    data[j+1]=temp;
+                }
+            }
+        }
+        console.log(data);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

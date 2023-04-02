@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script>
+        let array1=[40,15,22,23,12,10];
+        console.warn(array1)
+    function deleter(){
+
+    let position=document.getElementById('position').value; 
+    console.log(typeof(position))//input field returning a string. so we need to convert it into integer, otherwise it will give unwanted result.
+    position=parseInt(position)
+    for(let i=position;i<array1.length-1;i++){
+        //yaha i k andar integer value hona chahiye, lekin position me input field string return kar raha hai. hence it need to be change to integer,that's why we parse it to integer.
+          array1[i]=array1[i+1];
+    }
+    array1.length=array1.length-1;
+    
+    console.warn(array1)
+    }
+
+    </script>
+</head>
+<body>
+ 
+    <input type="number" id="position"/>
+<!--type="number" tells the browser that the user should only be allowed to enter number characters, but deep down, it's still a text field.-->
+    <button onclick="deleter()">Delete</button>
+
+</body>
+</html>

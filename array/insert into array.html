@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script>
+
+        function insertEl(){
+
+            let array1=[40,15,22,23,12,10];
+            let newEl=document.getElementById('newelement').value;
+            let position=document.getElementById('position').value;
+        for(let i=array1.length-1;i>=0;i--){
+            //in this loop we are traversing from last element to the first element
+            if(i>=position){
+                array1[i+1]=array1[i];//ith position par jo element hai uska value ko next position par dal denge.we will do it upto given position
+                if(i==position){
+                    //now we will insert the value at the given position
+                    array1[i]=newEl
+                }
+            }
+        }
+
+        console.log(array1)
+        }
+        
+        
+    </script>
+</head>
+<body>
+    
+    <input type='number' id='position'  placeholder="enter position"/>
+        <input type='number' id='newelement' placeholder="insert"/>
+        <button onclick="insertEl()">Insert</button>
+      
+</body>
+</html>

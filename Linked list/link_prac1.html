@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        class Train{
+constructor(data){
+
+    this.head={
+        value:data,
+        next:null
+    }
+    this.tail=this.head;
+    this.size=1;
+}
+
+  appendNode(newData){
+    let newNode={
+             val:newData,
+             next:null
+    }
+    this.tail.next=newNode;
+    this.tail=newNode;
+    this.size+=1;
+  }
+
+  traverse(){
+    let counter=0;
+    let currentNode=this.head;
+
+    while(counter<this.size){
+        console.warn(currentNode);
+        currentNode=currentNode.next;
+        counter++
+    }
+   
+  }
+
+  deletion(index){
+       let counter=1;
+       let leadNode=this.head;
+       if(index===1){
+        this.head=this.head.next;//head will be replaced by its next node, hence deleted.
+       }else{
+           while(counter<index-1){
+               leadNode=leadNode.next;
+               counter++
+
+           }
+           let nextNode=leadNode.next.next;
+           leadNode.next=nextNode;
+           console.log(leadNode);
+
+       }
+
+  }
+
+        }
+
+        let obj=new Train('vicky');
+        obj.appendNode('vishal');
+        obj.appendNode('abhimanyu');
+        obj.appendNode('shubham');
+        obj.appendNode('s.Prakash');
+            
+        console.warn(obj);
+        obj.traverse();
+        obj.deletion(4);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+  class Link {
+
+    constructor(data){
+
+        this.head={
+        val:data,
+        next:null
+
+        };
+        this.tail=this.head;
+        this.size=1;
+
+    }
+
+    newNode(x){
+
+        let newNode=
+        {
+            val:x,
+            next:null
+        }
+
+        this.tail.next=newNode;
+        this.tail=newNode;
+        this.size+=1;
+    }
+
+    traversing() {
+        let counter=0;
+        let currentNode=this.head;
+
+    while (counter < this.size){
+         
+       // console.warn(currentNode);
+        currentNode=currentNode.next;
+        counter++;
+       
+    }
+    }
+
+    //deletion
+    deletNode(index){
+        let counter=1;
+        let lead=this.head;
+
+if(index===1){
+     this.head=this.head.next//head ke next me jo agle node ka address hoga vo assign ho jayega as a head and previous head will be replaced and hence deleted.
+}
+else {
+    while(counter < index-1){
+    //since we have to work on lead , which will always be the previous node of the node which we want to delete and have passed its index. so this loop will work for counter<index-1. 
+    lead=lead.next//jab-jab ye loop chalega tab-tab lead badalta rahega.
+    counter++;
+    }
+    let nextNode=lead.next.next;//avi jo lead node hai uske next me jud jayega ye node jake
+    lead.next=nextNode;
+    //console.log(lead);//it will print lead node.
+    //console.log(obj)//we will not get the deleted node in output
+}
+   
+    }
+
+    
+  //node insertion at beginning .
+  insertFun(val) 
+  {
+  var nextNode=this.head;
+
+    let newnode={
+        value:val,
+        next:nextNode
+  }
+
+ this.head=newnode;
+ this.size+=1;
+  
+console.log(obj);
+}
+
+//node insertion at any position.
+  
+  } 
+
+  let obj=new Link(10);
+  obj.newNode(20);
+  obj.newNode(40);
+  obj.newNode(60);
+  obj.newNode(80);
+  //console.log(obj)//linked list printed in console
+  obj.traversing();
+  obj.deletNode(5);
+  obj.insertFun(850);
+ 
+    </script>
+</body>
+</html>
