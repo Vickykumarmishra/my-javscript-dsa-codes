@@ -19,7 +19,7 @@
         next:null
 
         };
-        this.tail=this.head;
+        this.tail=this.head;//initially jab ek hi node bana hai to vahi node head v hai and tail v vahi node hai.
         this.size=1;
 
     }
@@ -31,20 +31,20 @@
             val:x,
             next:null
         }
-
-        this.tail.next=newNode;
+        //head node will remain same ,only tail update ho raha hai.
+        this.tail.next=newNode;//avi currently jo tail hai uske next me newnode ko dal denge
         this.tail=newNode;
         this.size+=1;
     }
 
     traversing() {
-        let counter=0;
+        let counter=1;
         let currentNode=this.head;
 
-    while (counter < this.size){
-         
-       // console.warn(currentNode);
-        currentNode=currentNode.next;
+    while (counter <= this.size){
+         //console.log(this.size)=>5
+        console.warn(currentNode);
+        currentNode=currentNode.next;//currentNode update hota rahega, each time this loop will run.
         counter++;
        
     }
@@ -61,7 +61,7 @@ if(index===1){
 else {
     while(counter < index-1){
     //since we have to work on lead , which will always be the previous node of the node which we want to delete and have passed its index. so this loop will work for counter<index-1. 
-    lead=lead.next//jab-jab ye loop chalega tab-tab lead badalta rahega.
+    lead=lead.next//jab-jab ye loop chalega tab-tab lead badalta rahega.current lead k next m jo node hai usko lead bana rahe hai through this line.
     counter++;
     }
     let nextNode=lead.next.next;//avi jo lead node hai uske next me jud jayega ye node jake
@@ -86,14 +86,14 @@ else {
  this.head=newnode;
  this.size+=1;
   
-console.log(obj);
+//console.log(obj);
 }
 
 //node insertion at any position.
   
   } 
 
-  let obj=new Link(10);
+  let obj=new Link(10);//object k bante hi constructor call ho jata hai.
   obj.newNode(20);
   obj.newNode(40);
   obj.newNode(60);
