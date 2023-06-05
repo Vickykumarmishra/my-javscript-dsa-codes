@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Binary search recursive pproach</title>   
+    <script>
+
+        let data=[5,25,35,45,54,68]
+        let start=0;
+        let end=data.length-1;
+        let position=undefined;
+        let find=15;
+
+        function recursiveBinary(data,start,end){
+            let mid=Math.floor((start+end)/2)
+//function ka execution khatam ho jayega agar start > end ho jayega to.
+            if(start>end){return false;}//if i will not write this ,then it will give this error:-Uncaught RangeError: Maximum call stack size exceeded
+            if(data[mid]===find){
+                position=mid;
+                return true;//yaha return likhne ka tatparya bas yahi hai ki function ka execution pura ho jayega jab ye line execute hoga tab. 
+            }
+
+            else if(data[mid]<find){
+                recursiveBinary(data,mid+1,end)
+            }
+            else {
+                recursiveBinary(data,start,mid-1);
+            }
+            
+        }
+
+        recursiveBinary(data,start,end);
+        console.log(position);
+            </script>
+            
+</head>
+<body>
+
+
+
+    
+</body>
+</html>

@@ -14,8 +14,9 @@
         for(let i=0;i<data.length;i++)
         {
          //${} syntax allows us to put an expression in it and it will produce the value   
-          document.write(`${data[i]} <br>`)//line break using backtick and $ symbol.
-         
+          document.write(`${data[i]}`)//line break using backtick and $ symbol.
+          document.write(`<br>`)
+          console.log(data[i])
         }
         document.write(`<br>`)//easy way to break line in js
         document.write(data[4])

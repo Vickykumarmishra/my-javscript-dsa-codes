@@ -6,13 +6,13 @@
         function searcher(){
 
             let data=[20,15,25,30,28,16]
-           var elem=document.getElementById('search1').value;
+           var elem=document.getElementById('element').value;
            elem=parseInt(elem);
-           let index=undefined;
+          // let index=undefined;
     
      for(i=0;i<data.length;i++){
           
-        if(data[i]===elem){
+        if(data[i]===elem){// we can also use '==', here.
            index=i;
             break;//come out of the loop;
         }
@@ -27,7 +27,7 @@ document.getElementById('para1').innerHTML='element is found at position:'+index
 
 <body>
     
-    <input type="text" id="search1">
+    <input type="text" id="element">
     <button onclick="searcher()">search</button>
     <p id="para1"></p>
 

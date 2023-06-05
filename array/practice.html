@@ -1,0 +1,92 @@
+<html>
+<head>
+
+<script>
+let array=[10,15,5,17,12,25]
+
+for(let i=0;i<array.length-1;i++){
+    console.log(array[i]);
+    document.write(`${array[i]}`)
+    document.write(`<br>`)
+}
+
+function insert(){
+    let position=document.getElementById('position').value;
+    let value=document.getElementById('value').value;
+
+    for(i=array.length-1;i>=position;i--){
+
+
+        if(i>=position){
+            array[i+1]=array[i];
+        }
+
+        if(i==position){
+            array[i]=value;
+        }
+    }
+
+    for(let i=0;i<array.length-1;i++){
+    console.log(array[i]);
+    document.write(`${array[i]}`)
+    document.write(`<br>`)
+}
+    
+}
+
+function deleter(){
+
+    position=document.getElementById('delete').value;
+    position=parseInt(position)
+
+    for(i=position;i<array.length-1;i++){
+        array[i]=array[i+1];
+    }
+    array.length=array.length-1;
+
+    for(let i=0;i<array.length-1;i++){
+    console.log(array[i]);
+    document.write(`${array[i]}`)
+    document.write(`<br>`)
+}
+    
+}
+
+function select(){
+ 
+    let array2=[20,12,53,3,18,15,29]
+
+    for(i=0;i<array.length;i++){
+
+        for(j=i+1;j<array2.length;j++){
+
+            if(array2[j]<array2[i]){
+
+                let temp=array2[j]
+                array2[j]=array2[i]
+                array2[i]=temp
+            }
+        }
+    }
+
+    for(i=0;i<array2.length;i++){
+    console.log(array2[i])}
+}
+
+
+</script>
+</head>
+
+<body>
+<input id="position" placeholder="enter position">
+<input id="value" placeholder="enter value">
+<button onclick="insert()">insert</button><br>
+
+<input id="delete" placeholder="enter position to be deleted">
+<button onclick="deleter()">delete</button>
+
+<button onclick="select()">sorting</button>
+
+</body>
+
+<html>

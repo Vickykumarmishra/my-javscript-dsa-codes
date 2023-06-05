@@ -6,14 +6,14 @@
 
     <script>
         let data=[20,12,53,3,18,15,29]
-
+//selection sort Works well with small datasets.
        function selection()
        {
         
         for(let i=0;i<data.length;i++){
 
             for(let j=i+1;j<data.length;j++){
-//jab ek bar ye andar vala loop chal jayega to ek element sort ho jayega. similarly jab ye inner loop dobara chalega to ek aur element sort ho jayegA AND SO on chalta rahega until and unless pura array sort na ho jae.
+//jab ek bar ye andar vala loop puri tarah se  chal jayega to ek element sort ho jayega. similarly jab ye inner loop dobara chalega to ek aur element sort ho jayegA AND SO on chalta rahega until and unless pura array sort na ho jae.
                 if(data[j]<data[i]){
                     //data[0]<data[0+1].so we will do swapping
                     let temp=data[i];
@@ -23,10 +23,7 @@
             }
         }
 
-       }
-     
-
-       
+       }  
 
        selection();
        console.log(data);
@@ -35,5 +32,9 @@
 </head>
 <body>
     <h1>selection sort</h1>
+    <!--Disadvantages of the Selection Sort Algorithm
+Selection sort has a time complexity of O(n^2) in the worst and average case.
+Does not work well on large datasets.-->
 </body>
+
 </html>

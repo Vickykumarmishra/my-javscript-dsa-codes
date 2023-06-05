@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>binary search by iterative approach</title>
+    <script>
+        function binarysearch(){
+            let data=[12,18,24,30,36]
+            let start=0;
+            let end=data.length-1
+           
+            let position=undefined;
+            let find=24
+            while(start<=end){
+               
+                let mid=Math.floor((start+end)/2)
+                if(data[mid]===find){
+                    position=mid
+                    break;
+                }
+                else if(data[mid]<find){
+                    start=mid+1
+                }
+                else {
+                    end=mid-1
+                }
+            }
+
+            console.log(position)
+
+        }
+
+
+    </script>
+</head>
+<body>
+  
+    <button onclick="binarysearch()">binarySearch</button>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        
+            let array1=[5,10,12,18,19]
+
+            let array2=[17,20,21,24]
+            //lets take an empty array
+            let array3=[]
+
+          for(i=0;i<array1.length;i++){
+
+           array3[i]=array1[i]//after putting array1 array3 will look like this:-5,10,12,18,19,_,_,_.......,in the blank spaces array2 will be put.
+         }
+
+            for(i=0;i<array2.length;i++){
+
+                array3[array1.length+i]=array2[i];
+                /*array3[5+0]=18
+                  array3[5+1]=20
+                  array3[5+2]=21
+                  array3[5+3]=24
+                  */
+            }
+
+            
+              for(i=0;i<array3.length;i++){
+                console.log(array3[i])
+              }
+              array3.sort()
+
+    </script>
+</body>
+</html>

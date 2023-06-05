@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>insertion sorting</title>
+
+   <script>
+   function insertionSort(){
+   let current;
+    let array=[12,11,13,5,6]
+let i,j
+    for (i=1;i<array.length;i++){
+             current=array[i];// it is a temporarary variable storing current running index's value.     
+        j=i-1//inner loop will execute to the left of index i
+        while(j>=0 && array[j]>current){
+    //inner loop executres leftwards.
+            array[j+1]=array[j];//bada vala value ko right me shift kar rahe hai.
+    //since we have stored the value at j+1, i.e  i=1's value in current variable so on overriding it by array[j]'s value it has not destroyed.
+    j--;//-1
+        }
+        array[j+1]=current;//chhote vala value ko leftmost position par shift kar rahe hai.
+    //jab ham inner loop se bahar ate hai tab tak j ka value 1 point se decrease ho jata hai isiliye ham jth index par value dene k liye j+1 karte hai
+    }
+    
+    for(i=0;i<array.length;i++){
+
+        console.log(array[i])
+    }
+   }
+
+   </script>
+</head>
+<body>
+    <button onclick="insertionSort()">insertion sort</button>
+    
+</body>
+</html>
