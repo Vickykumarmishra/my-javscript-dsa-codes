@@ -20,10 +20,10 @@
             }
 
             else if(data[mid]<find){
-                recursiveBinary(data,mid+1,end)
+                recursiveBinary(data,mid+1,end) //start index me mid+1 pass kar diye
             }
             else {
-                recursiveBinary(data,start,mid-1);
+                recursiveBinary(data,start,mid-1);//end argument me mid-1 pass kar diye
             }
             
         }
